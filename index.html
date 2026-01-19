@@ -10,11 +10,11 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #f8fafc;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column; /* Omogućava da footer ide ispod containera */
+            align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 2rem 0;
+            padding: 0;
             text-align: center;
         }
         .container {
@@ -25,7 +25,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             max-width: 800px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            margin: auto;
+            margin: 4rem 1rem 6rem 1rem; /* Margina gore i dole da ne udara u ivice */
         }
         .tag {
             background: #38bdf8;
@@ -51,7 +51,6 @@
             margin-top: 3rem;
             position: relative;
         }
-        /* Vertical Line for the Tree */
         .roadmap::before {
             content: '';
             position: absolute;
@@ -96,6 +95,15 @@
             font-size: 0.9rem;
             margin-top: 10px;
             color: #10b981;
+        }
+        footer {
+            margin-top: auto; /* Gura footer na samo dno */
+            width: 100%;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            color: #64748b;
+            background: rgba(15, 23, 42, 0.8); /* Blago tamnija pozadina za footer */
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .status-dot {
             height: 10px;
@@ -162,7 +170,8 @@
             <span style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">MODULE 1 COMPLETE - READY FOR PYTHON</span>
         </div>
     </div>
-     <footer>
+
+    <footer>
         &copy; 2026 QA for AI. Created by <strong>Maja Vujovic</strong>.
     </footer>
 </body>
