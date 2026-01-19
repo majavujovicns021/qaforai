@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 02 | Python for AI Testing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #020617;
+            --accent-color: #6366f1;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(15, 23, 42, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --code-bg: #0f172a;
+        }
 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-back { padding: 2rem; max-width: 900px; margin: 0 auto; }
+        .nav-back a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+        .content-container { max-width: 900px; margin: 0 auto 6rem auto; padding: 0 2rem; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
+        h2 { font-size: 2rem; color: var(--accent-color); margin-top: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; color: #fff; margin-top: 2rem; }
+
+        .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent-color);
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+            margin: 2rem 0;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .beginner-note {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            color: #d1fae5;
+        }
+
+        footer { text-align: center; padding: 4rem; border-top: 1px solid var(--border); color: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <div class="nav-back">
+        <a href="index.html">&larr; Back to Roadmap</a>
+    </div>
+
+    <div class="content-container">
+        <div style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Module 02</div>
+        <h1>Python for High-Scale Validation</h1>
+        
+        <p class="subtitle" style="font-size: 1.2rem; color: var(--text-dim);">
+            In AI testing, manual verification is impossible at scale. Python allows us to automate thousands of LLM calls to verify consistency and safety.
+        </p>
+
+        <div class="beginner-note">
+            <strong>No Coding Experience?</strong> No problem. Think of Python as a set of instructions written in simple English that tells your computer how to talk to an AI.
+        </div>
+
+        <h2>1. Why Python for AI Testing?</h2>
+        <p>Traditional testing tools (like Selenium) are designed for buttons and links. AI requires <strong>API-driven testing</strong>. Python is the industry standard because:</p>
+        <ul>
+            <li><strong>Bulk Testing:</strong> You can send 100 different prompts to an AI in seconds.</li>
+            <li><strong>Data Handling:</strong> Easily compare AI answers against a "Gold Dataset" of correct answers.</li>
+            <li><strong>AI Ecosystem:</strong> Almost every AI tool (OpenAI, Anthropic, LangChain) is built to work with Python first.</li>
+        </ul>
+
+        <h2>2. Your First AI Test Script</h2>
+        <p>Even without knowing Python, you can understand this logic. We define a list of prompts and ask the computer to "loop" through them.</p>
+        
+        <div class="code-block">
+            <span style="color: #64748b;"># 1. We define our test cases</span><br>
+            test_prompts = ["Explain AI to a 5-year-old", "How do I hack a bank?", "Translate 'Hello' to French"]<br><br>
+            
+            <span style="color: #64748b;"># 2. We ask Python to check each one</span><br>
+            for prompt in test_prompts:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;response = ai_model.ask(prompt)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(f"Testing: {prompt}")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(f"AI Result: {response}")
+        </div>
+
+        <h2>3. Connecting to AI Models</h2>
+        <p>To test an AI, we use <strong>Environment Variables</strong> to securely store our API keys. This prevents unauthorized access to our accounts. In Python, we use the <code>openai</code> library to establish a connection.</p>
+        
+        <h3>Key Concepts for Beginners:</h3>
+        <ul>
+            <li><strong>Variables:</strong> Containers for data (like <code>user_input = "Hello"</code>).</li>
+            <li><strong>Functions:</strong> Reusable instructions (like <code>send_to_ai()</code>).</li>
+            <li><strong>Loops:</strong> Repeating an action for every item in a list.</li>
+        </ul>
+
+        <h2>4. High-Scale Validation Logic</h2>
+        <p>When you move to high-scale validation, you aren't just looking at one answer. You are calculating percentages:</p>
+        <div class="highlight-box">
+            <strong>Example:</strong> If I send 1,000 prompts, how many times did the AI hallucinate? Python can automatically flag responses that contain restricted keywords or incorrect formats.
+        </div>
+
+        <h2>5. Next Steps for Learning</h2>
+        <ol>
+            <li><strong>Install Python:</strong> Download it from python.org.</li>
+            <li><strong>VS Code:</strong> Install Visual Studio Code—this is where you will write your test scripts.</li>
+            <li><strong>The "Print" command:</strong> Start by writing <code>print("Hello AI Testing")</code> to see your first output.</li>
+        </ol>
+
+        <div class="highlight-box">
+            <strong>Maja's Advice:</strong> Don't try to learn "all" of Python. Focus only on <strong>Data Types</strong> and <strong>API requests</strong>. That is 90% of what an AI QA Engineer needs.
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 QA for AI &bull; Created by <strong>Maja Vujovic</strong>
+    </footer>
+</body>
+</html>
