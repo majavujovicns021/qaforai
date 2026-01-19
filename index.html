@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QA for AI | Course Curriculum</title>
+    <title>QA for AI | The Future of Quality Engineering</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -22,15 +22,14 @@
                 radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
             color: var(--text-main);
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 90%;
             margin: 6rem auto;
             padding: 4rem;
@@ -38,8 +37,6 @@
             backdrop-filter: blur(25px);
             border: 1px solid var(--border);
             border-radius: 40px;
-            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
-            flex-grow: 1;
         }
 
         .tag {
@@ -57,114 +54,130 @@
         }
 
         h1 { 
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
             background: linear-gradient(180deg, #fff 30%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
+        .hero-desc {
+            font-size: 1.3rem;
             color: var(--text-dim);
-            max-width: 800px;
-            margin: 0 auto 4rem auto;
+            max-width: 850px;
+            margin-bottom: 4rem;
             line-height: 1.6;
         }
 
-        .section-title {
+        .section-header {
             font-size: 1.8rem;
-            margin-top: 4rem;
-            margin-bottom: 2rem;
-            text-align: left;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 15px;
+            margin: 4rem 0 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header::before {
+            content: "";
+            width: 4px;
+            height: 30px;
+            background: var(--accent-color);
+            border-radius: 10px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 24px;
-            transition: 0.3s;
+            padding: 2.5rem;
+            border-radius: 30px;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card:hover {
-            border-color: var(--accent-color);
+            transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-color);
         }
 
-        .card h3 { color: var(--accent-color); margin-top: 0; }
-        .card p { font-size: 0.95rem; color: var(--text-dim); }
+        .card h3 { color: #fff; margin-top: 0; font-size: 1.4rem; }
+        .card p { color: var(--text-dim); line-height: 1.7; font-size: 1rem; }
+
+        .why-us {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            padding: 3rem;
+            border-radius: 30px;
+            margin-top: 4rem;
+            border: 1px solid var(--border);
+        }
 
         footer { padding: 4rem 0; color: #475569; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="tag">Course Curriculum 2026</div>
-        <h1>Become an AI Quality Engineer</h1>
-        <p class="subtitle">
-            This page outlines the detailed modules and tools we cover in the <strong>QA for AI</strong> masterclass. 
-            Moving beyond traditional testing, we focus on the specialized stack required to validate Large Language Models and Agentic workflows.
+        <div class="tag">Next-Gen Education</div>
+        <h1>QA for AI: Beyond the Basics</h1>
+        <p class="hero-desc">
+            The era of deterministic testing is over. Whether you're coming from manual testing or traditional automation (Selenium, Cypress), 
+            this curriculum is designed to transform you into an <strong>AI Quality Engineer</strong> capable of validating the world's most complex LLM systems.
         </p>
 
-        <div class="section-title">Essential Toolstack</div>
+        <div class="why-us">
+            <h3 style="margin-top:0">Why This Masterclass?</h3>
+            <p>Traditional tools can't test AI reasoning. We focus on <strong>Semantic Validation</strong>, <strong>Adversarial Red Teaming</strong>, and <strong>Automated AI Evaluation</strong>—skills that are currently in high demand but low supply.</p>
+        </div>
+
+        <div class="section-header">Essential AI Toolstack</div>
         <div class="grid">
             <div class="card">
                 <h3>DeepEval</h3>
-                <p>The most popular "Unit Testing" framework for AI. Write tests similar to Selenium/Pytest but specifically designed to verify LLM response quality.</p>
+                <p>The Python-based "Unit Testing" framework for LLMs. Automate the measurement of Faithfulness, Relevancy, and Hallucination scores.</p>
             </div>
             <div class="card">
                 <h3>LangSmith</h3>
-                <p>A specialized debugger (like Postman for AI) that shows exactly what the AI was "thinking" during generation. Trace every step of a complex RAG chain.</p>
+                <p>Advanced observability and debugging. Go beyond the surface to see the full execution trace of your AI's reasoning.</p>
+            </div>
+            <div class="card">
+                <h3>Weights & Biases (W&B)</h3>
+                <p>The industry standard for model evaluation and visualization. Track how changes in prompts affect your AI's performance over time.</p>
             </div>
             <div class="card">
                 <h3>Giskard</h3>
-                <p>An automated scanning tool that finds "holes" in AI models, detecting hidden biases, discrimination, and ethical vulnerabilities.</p>
+                <p>Automatically detect vulnerabilities, bias, and ethical risks in your AI models through specialized adversarial scans.</p>
             </div>
         </div>
 
-        <div class="section-title">What You Will Learn</div>
+        <div class="section-header">Curriculum Roadmap</div>
         <div class="grid">
             <div class="card">
-                <h3>1. Probabilistic Testing</h3>
-                <p>Learn to test systems where 1+1 doesn't always equal 2. Master Red Teaming and adversarial prompting.</p>
+                <h3>1. Probabilistic Strategy</h3>
+                <p>Master the shift from Pass/Fail to evaluating intent and safety. Learn Red Teaming and how to break AI systems.</p>
             </div>
             <div class="card">
-                <h3>2. Python for AI Automation</h3>
-                <p>Scale your tests using Python to interface with OpenAI and Anthropic APIs.</p>
+                <h3>2. Python for AI Validation</h3>
+                <p>No more Selenium. Learn to build high-scale test harnesses using Python to talk directly to AI APIs.</p>
             </div>
             <div class="card">
-                <h3>3. RAG Evaluation</h3>
-                <p>Deep dive into validating Retrieval-Augmented Generation. Measuring Faithfulness and Answer Relevancy.</p>
+                <h3>3. RAG & Semantic Metrics</h3>
+                <p>Deep dive into Retrieval-Augmented Generation. Measure how accurately your AI uses external data.</p>
             </div>
             <div class="card">
-                <h3>4. Prompt Engineering for QA</h3>
-                <p>Learn to write "Judge Prompts" that allow one AI to automatically grade the work of another AI.</p>
-            </div>
-            <div class="card">
-                <h3>5. Vector Database Testing</h3>
-                <p>Validate how data is stored and retrieved in Pinecone or Milvus to ensure the AI has the right context.</p>
-            </div>
-            <div class="card">
-                <h3>6. AI Observability</h3>
-                <p>Monitoring AI in production. Setting up alerts for hallucinations and toxic outputs in real-time.</p>
+                <h3>4. Agentic System Testing</h3>
+                <p>The final frontier. Testing autonomous agents that use tools, execute code, and make real-world decisions.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 QA for AI &bull; Masterclass by <strong>Maja Vujovic</strong>
+        &copy; 2026 QA for AI &bull; Created by <strong>Maja Vujovic</strong>
     </footer>
 </body>
 </html>
