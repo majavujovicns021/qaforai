@@ -3,51 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QA for AI | Premium Roadmap</title>
+    <title>QA for AI | Education Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #020617;
-            --accent-color: #6366f1; /* Indigo - deluje skuplje od obične plave */
+            --accent-color: #6366f1;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
-            --glass: rgba(15, 23, 42, 0.6);
-            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(15, 23, 42, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
             color: var(--text-main);
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 90%;
             margin: 6rem auto;
             padding: 4rem;
             background: var(--glass);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             border: 1px solid var(--border);
             border-radius: 40px;
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
             flex-grow: 1;
         }
 
         .tag {
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            color: white;
-            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 6px 18px;
             border-radius: 100px;
             font-size: 0.75rem;
             font-weight: 700;
@@ -58,154 +57,141 @@
         }
 
         h1 { 
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+            letter-spacing: -3px;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #fff 30%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--text-dim);
-            max-width: 600px;
-            margin: 0 auto 4rem auto;
+            max-width: 700px;
+            margin: 0 auto 5rem auto;
             line-height: 1.6;
-            font-weight: 300;
         }
 
-        .roadmap {
-            text-align: left;
-            position: relative;
-        }
+        .roadmap { text-align: left; }
 
         .step {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 4rem;
-            transition: transform 0.3s ease;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            margin-bottom: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .step:hover {
-            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
         }
 
-        .step-dot {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 32px;
-            width: 32px;
-            background: var(--bg-color);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--accent-color);
-            font-weight: bold;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(99, 102, 241, 0.3);
         }
 
-        .step-title {
-            font-weight: 600;
-            font-size: 1.4rem;
+        .step-content h3 {
+            font-size: 1.6rem;
+            margin: 0 0 1rem 0;
             color: #fff;
-            margin-bottom: 0.75rem;
         }
 
-        .step-desc {
-            font-size: 1.05rem;
+        .step-content p {
+            font-size: 1.1rem;
             color: var(--text-dim);
-            line-height: 1.8;
-            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
-        .code-box {
-            background: rgba(0,0,0,0.4);
-            padding: 15px 20px;
+        .module-link {
+            display: inline-flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 24px;
+            background: var(--accent-color);
             border-radius: 12px;
-            border: 1px solid var(--border);
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            margin-top: 15px;
-            color: #a5b4fc;
+            transition: 0.3s;
+        }
+
+        .module-link:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
         }
 
         footer {
-            width: 100%;
             padding: 4rem 0;
-            font-size: 0.85rem;
             color: #475569;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
             text-transform: uppercase;
-        }
-
-        .premium-line {
-            height: 1px;
-            width: 100px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-            margin: 20px auto;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
+            .step { grid-template-columns: 1fr; padding: 2rem; }
             .container { padding: 2rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="tag">Exclusive Access</div>
+        <div class="tag">Education Material</div>
         <h1>QA for AI Roadmap</h1>
-        <p class="subtitle">Evolving from traditional testing methodologies to the next frontier of AI Quality Engineering.</p>
+        <p class="subtitle">Deep dive into the transition from legacy testing to AI quality engineering. Comprehensive resources for the modern QA specialist.</p>
 
         <div class="roadmap">
             <div class="step">
-                <div class="step-dot">01</div>
-                <div class="step-title">Probabilistic Strategy</div>
-                <div class="step-desc">
-                    Beyond deterministic assertions. We master the art of <strong>Red Teaming</strong> 
-                    and evaluate AI reasoning through sophisticated prompt forensics.
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Probabilistic Strategy & Red Teaming</h3>
+                    <p>Master the shift from deterministic "Pass/Fail" to assessing AI reasoning. Learn how to break models, identify biases, and evaluate LLM output quality using advanced prompt forensics.</p>
+                    <a href="probabilistic.html" class="module-link">Access Module &rarr;</a>
                 </div>
             </div>
 
             <div class="step">
-                <div class="step-dot">02</div>
-                <div class="step-title">Automated Orchestration</div>
-                <div class="step-desc">
-                    Python as a high-performance engine for large-scale model validation 
-                    and seamless API interaction.
-                    <div class="code-box">val_engine.execute(test_suite, model="gpt-4o")</div>
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Python for High-Scale Validation</h3>
+                    <p>Python is no longer optional. Learn how to build automated test harnesses that interface directly with OpenAI, Anthropic, and open-source APIs to validate thousands of responses at scale.</p>
+                    <a href="python.html" class="module-link">Access Module &rarr;</a>
                 </div>
             </div>
 
             <div class="step">
-                <div class="step-dot">03</div>
-                <div class="step-title">The Gold Standard Metrics</div>
-                <div class="step-desc">
-                    Implementing industry-leading guardrails for <strong>Faithfulness</strong>, 
-                    <strong>Semantic Relevancy</strong>, and Ethical Alignment.
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Semantic Metrics & Safety</h3>
+                    <p>Implement the gold standard of AI evaluation: Faithfulness, Relevancy, and Hallucination detection. Mastering DeepEval, RAGAS, and custom LLM-as-a-judge patterns.</p>
+                    <a href="metrics.html" class="module-link">Access Module &rarr;</a>
                 </div>
             </div>
 
             <div class="step">
-                <div class="step-dot">04</div>
-                <div class="step-title">Multi-Agent RAG Ecosystems</div>
-                <div class="step-desc">
-                    Securing the future of interconnected AI agents and complex 
-                    Retrieval-Augmented Generation workflows.
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Agentic Systems & RAG</h3>
+                    <p>The final frontier. Testing autonomous agents and complex Retrieval-Augmented Generation (RAG) pipelines where the AI interacts with real-world databases and tools.</p>
+                    <a href="agents.html" class="module-link">Access Module &rarr;</a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="premium-line"></div>
         &copy; 2026 QA for AI &bull; Curated by <strong>Maja Vujovic</strong>
     </footer>
 </body>
