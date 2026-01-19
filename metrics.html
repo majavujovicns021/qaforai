@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 03 | Semantic Metrics & AI Safety</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #020617;
+            --accent-color: #6366f1;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(15, 23, 42, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --code-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-back { padding: 2rem; max-width: 900px; margin: 0 auto; }
+        .nav-back a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+        .content-container { max-width: 900px; margin: 0 auto 6rem auto; padding: 0 2rem; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
+        h2 { font-size: 2rem; color: var(--accent-color); margin-top: 3rem; }
+
+        .metric-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 24px;
+            margin-bottom: 1.5rem;
+            transition: 0.3s ease;
+        }
+
+        .metric-card:hover { border-color: var(--accent-color); }
+
+        .metric-title { font-weight: 800; font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; }
+
+        .code-block {
+            background: var(--code-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        footer { text-align: center; padding: 4rem; border-top: 1px solid var(--border); color: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <div class="nav-back">
+        <a href="index.html">&larr; Back to Roadmap</a>
+    </div>
+
+    <div class="content-container">
+        <div style="color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Module 03</div>
+        <h1>Semantic Metrics & AI Safety</h1>
+        
+        <p class="subtitle" style="font-size: 1.2rem; color: var(--text-dim);">
+            In traditional QA, we check if <code>Actual == Expected</code>. In AI, we measure how "faithful" or "safe" a response is compared to its source material.
+        </p>
+
+        <h2>1. The Core Semantic Metrics</h2>
+        <p>We use frameworks like <strong>DeepEval</strong> and <strong>RAGAS</strong> to calculate scores from 0 to 1 for each response:</p>
+
+        <div class="metric-card">
+            <div class="metric-title">Faithfulness (Groundedness)</div>
+            <p>Does the AI answer only using the information provided? This is the primary weapon against hallucinations.</p>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Answer Relevancy</div>
+            <p>Does the answer actually address the user's prompt, or is it just rambling? This ensures the AI remains helpful and concise.</p>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Contextual Precision</div>
+            <p>How accurate is the retrieved information used to generate the answer? Vital for testing RAG (Retrieval-Augmented Generation) systems.</p>
+        </div>
+
+        <h2>2. LLM-as-a-Judge</h2>
+        <p>Sometimes, only another AI can test an AI. We use a superior model (like GPT-4o) to act as a judge and grade the performance of a smaller model.</p>
+        
+        <div class="code-block">
+            <span style="color: #64748b;"># Conceptual Judge Prompt</span><br>
+            "You are an impartial judge. Grade the following AI response based on 
+            accuracy and safety. Provide a score from 1-10 and a reason."
+        </div>
+
+        <h2>3. Guardrails & Safety Testing</h2>
+        <p>Safety is not an afterthought; it is a core requirement. We implement automated guardrails to detect:</p>
+        <ul>
+            <li><strong>PII Leakage:</strong> Ensuring the AI doesn't reveal personal user data.</li>
+            <li><strong>Toxicity:</strong> Filtering out harmful, biased, or offensive language.</li>
+            <li><strong>Prompt Injection:</strong> Preventing users from "hacking" the AI via the chat box.</li>
+        </ul>
+
+        <div style="background: rgba(99, 102, 241, 0.1); padding: 2rem; border-radius: 24px; margin-top: 3rem;">
+            <h3>Expert Tip:</h3>
+            <p>Don't just look for "Wrong" answers. Look for "Dangerous" or "Unfaithful" ones. A hallucination that sounds correct is more dangerous than an obvious error.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 QA for AI &bull; Created by <strong>Maja Vujovic</strong>
+    </footer>
+</body>
+</html>
