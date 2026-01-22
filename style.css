@@ -148,3 +148,32 @@ footer { padding: 4rem 0; color: #475569; font-size: 0.9rem; }
     .container { padding: 2rem; }
     nav { justify-content: center; }
 }
+/* Specifično za Blog Post stranice */
+.blog-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    max-width: 850px;
+}
+
+ul {
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 850px;
+}
+
+ul li {
+    color: var(--text-dim);
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    max-width: 900px;
+}
